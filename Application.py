@@ -489,7 +489,7 @@ class Application:
         self.ProcessEntry.grid()
 
         self.CreateButtonProcess = tk.Button(self.ProcessFrame, command=self.__AddProcessToWatch)
-        self.CreateButtonProcess.config(activebackground='#ff0000', background='#ff4848', font='{Consolas} 12 {bold}', text='Create')
+        self.CreateButtonProcess.config(activebackground='#ff0000', background='#ff4848', font='{Consolas} 12 {bold}', text='Add')
         self.CreateButtonProcess.grid(column='0', pady='5', row='1')
         
         self.MessageFrameProcess = tk.Frame(self.MainFrame)
