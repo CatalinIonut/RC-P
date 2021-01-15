@@ -543,8 +543,9 @@ class Application:
             for ceva in self.__Resources.DISK_percent:
                 cursor.execute("UPDATE InputRegisters SET VALUE = %s WHERE ID = %s", (math.ceil(ceva), Input_Registers_Offset + i))
                 i = i + 2
-            self.CPUusageLabel.config(text=str(self.__Resources.CPU_percent) + '%')
-            self.RAMusageLabel.config(text=str(self.__Resources.RAM_percent) + '%')
+            if self.__GUIThread.is_alive():
+                self.CPUusageLabel.config(text=str(self.__Resources.CPU_percent) + '%')
+                self.RAMusageLabel.config(text=str(self.__Resources.RAM_percent) + '%')
             processeswatch = open("Processes.txt", "r").read().split('\n')
             processeswatch = processeswatch[:len(processeswatch) - 1]
             if '' in processeswatch:
